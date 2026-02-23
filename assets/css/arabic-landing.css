@@ -1,0 +1,327 @@
+/* ═══════════════════════════════════════════════════════════
+   Arabic Landing — Hero, About, Product Selector, Dashboard Header
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Arabic Font Stack ─────────────────────────────────────── */
+.ar-hero-section,
+.ar-hero-section *,
+.ar-product-section,
+.ar-product-section *,
+.ar-dashboard-header-section,
+.ar-dashboard-header-section *,
+[dir="rtl"] {
+    font-family: 'Noto Kufi Arabic', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Hero Section (Arabic Landing) ─────────────────────────── */
+.ar-hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7rem 1.5rem 4rem;
+    overflow: hidden;
+    background: var(--gradient-hero);
+}
+
+.ar-hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* ── Welcome Row (Logo + Text) ─────────────────────────────── */
+.ar-welcome-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* TODO: Logo placeholder — replace assets/images/company-logo.png */
+.ar-company-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    flex-shrink: 0;
+}
+
+.ar-welcome-line {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.92);
+    letter-spacing: 0.02em;
+}
+
+/* ── Hero Title ────────────────────────────────────────────── */
+.ar-hero-title {
+    font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: 0.5rem;
+    line-height: 1.25;
+    background: linear-gradient(135deg, #fff 0%, #fbbf24 50%, #fff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.ar-hero-subtitle-en {
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2rem;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.05em;
+}
+
+/* ── Hero Description ──────────────────────────────────────── */
+.ar-hero-desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.9;
+}
+
+/* ── About Block (من نحن) ──────────────────────────────────── */
+.ar-about-block {
+    max-width: 750px;
+    margin: 0 auto 2.5rem;
+    padding: 2rem 2.5rem;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    text-align: right;
+}
+
+.ar-about-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fbbf24;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.ar-about-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 2;
+    text-align: justify;
+    direction: rtl;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Product Selector Section
+   ═══════════════════════════════════════════════════════════ */
+.ar-product-section {
+    padding: 4rem 0;
+    background: var(--bg-primary);
+}
+
+.ar-section-subtitle-en {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin-top: 0.25rem;
+}
+
+.ar-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ar-product-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.ar-product-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.ar-product-card .ar-product-en {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: 'Inter', system-ui, sans-serif;
+    margin-bottom: 0.75rem;
+}
+
+.ar-product-icon {
+    font-size: 3rem;
+    margin-bottom: 0.75rem;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+.ar-product-badge {
+    display: inline-block;
+    padding: 0.25rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+}
+
+.ar-product-badge.active {
+    background: rgba(4, 120, 87, 0.2);
+    color: var(--accent-green);
+    border: 1px solid rgba(4, 120, 87, 0.3);
+}
+
+/* Active product card */
+.ar-product-card.active {
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.15), 0 8px 30px rgba(4, 120, 87, 0.12);
+}
+
+.ar-product-card.active::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: var(--gradient-hero);
+}
+
+.ar-product-card.active:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 3px rgba(4, 120, 87, 0.25), 0 12px 40px rgba(4, 120, 87, 0.2);
+}
+
+/* Disabled product cards */
+.ar-product-card.disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Dashboard Header Section
+   ═══════════════════════════════════════════════════════════ */
+.ar-dashboard-header-section {
+    padding: 3rem 0 1rem;
+    background: var(--bg-primary);
+}
+
+.ar-dashboard-header {
+    text-align: center;
+}
+
+.ar-dashboard-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.ar-dashboard-subtitle-en {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+/* ── Divider ornament ──────────────────────────────────────── */
+.ar-dashboard-header::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-hero);
+    border-radius: 3px;
+    margin: 1.5rem auto 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Responsive Adjustments
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .ar-hero-section {
+        padding: 6rem 1rem 3rem;
+    }
+
+    .ar-company-logo {
+        width: 64px;
+        height: 64px;
+    }
+
+    .ar-about-block {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .ar-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .ar-product-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .ar-product-icon {
+        font-size: 2.25rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ar-welcome-row {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .ar-about-text {
+        font-size: 0.92rem;
+        line-height: 1.85;
+    }
+
+    .ar-product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── High Contrast ─────────────────────────────────────────── */
+@media (prefers-contrast: high) {
+    .ar-about-block {
+        border-width: 2px !important;
+    }
+
+    .ar-product-card.active {
+        border-width: 3px;
+    }
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .ar-product-card,
+    .ar-product-card.active:hover {
+        transform: none !important;
+        transition: none !important;
+    }
+}
